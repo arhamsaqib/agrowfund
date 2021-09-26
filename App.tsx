@@ -1,14 +1,11 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {SplashGreen} from './app/screens/splash/splashGreen';
+import {SplashWhite} from './app/screens/splash/splashWhite';
 
 const App = () => {
-  return (
-    <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
-      <Text>Hi</Text>
-      <Text style={{fontFamily: 'Poppins-Black'}}>Hi</Text>
-    </SafeAreaView>
-  );
+  return <SplashGreen />;
 };
 
 export default App;
