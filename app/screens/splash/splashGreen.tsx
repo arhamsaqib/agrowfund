@@ -1,10 +1,15 @@
 import React from 'react';
+import {useEffect} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {COLORS} from '../../colors';
 import {MyText} from '../../core/MyText';
+import {wait} from '../../core/wait';
 
-export const SplashGreen = () => {
+export const SplashGreen = ({navigation}: any) => {
+  useEffect(() => {
+    wait(2000).then(() => navigation.replace('Onboarding 1'));
+  }, []);
   return (
     <LinearGradient
       start={{x: 0, y: 0}}

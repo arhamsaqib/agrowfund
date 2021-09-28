@@ -16,9 +16,24 @@ export const MyText: FunctionComponent<CustomTextProps> = ({
     </Text>
   );
 };
+export const TitleText: FunctionComponent<CustomTextProps> = ({
+  children,
+  style,
+  onPress,
+}) => {
+  return (
+    <Text onPress={onPress} style={[styles.myText, style, styles.titleText]}>
+      {children}
+    </Text>
+  );
+};
 
 const styles = StyleSheet.create({
   myText: {
-    fontFamily: 'Poppins-Black',
+    fontFamily: 'Poppins',
+  },
+  titleText: {
+    fontWeight: 'bold',
+    fontSize: 35,
   },
 });
