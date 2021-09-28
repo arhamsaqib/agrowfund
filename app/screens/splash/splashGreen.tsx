@@ -32,7 +32,9 @@ export const SplashGreen = ({navigation}: any) => {
           justifyContent: 'center',
           bottom: 20,
         }}>
-        <MyText style={styles.pwd}>Powered by Agrokivu</MyText>
+        <MyText style={[styles.pwd, {fontFamily: 'Montserrat'}]}>
+          Powered by Agrokivu
+        </MyText>
       </View>
     </LinearGradient>
   );

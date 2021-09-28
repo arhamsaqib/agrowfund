@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, Image, View} from 'react-native';
+import {SafeAreaView, StyleSheet, Image, View} from 'react-native';
 import {MyText} from '../../core/MyText';
 
 export const SplashWhite = () => {
@@ -21,7 +21,9 @@ export const SplashWhite = () => {
           justifyContent: 'center',
           bottom: 20,
         }}>
-        <MyText style={styles.pwd}>Powered by Agrokivu</MyText>
+        <MyText style={[styles.pwd, {fontFamily: 'Montserrat'}]}>
+          Powered by Agrokivu
+        </MyText>
       </View>
     </SafeAreaView>
   );
