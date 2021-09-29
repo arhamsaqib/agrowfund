@@ -68,6 +68,7 @@ export const HomeMain = ({navigation}: any) => {
             dotStyle={{height: 7, width: 7, borderRadius: 7}}
             dotColor={COLORS.primary_green}
             inactiveDotColor="#E1E1E1"
+            imageLoadingColor={COLORS.primary_green}
           />
         </View>
 
