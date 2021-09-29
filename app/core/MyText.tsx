@@ -16,13 +16,24 @@ export const MyText: FunctionComponent<CustomTextProps> = ({
     </Text>
   );
 };
+export const TextMontserrat: FunctionComponent<CustomTextProps> = ({
+  children,
+  style,
+  onPress,
+}) => {
+  return (
+    <Text onPress={onPress} style={[styles.montserrat, style]}>
+      {children}
+    </Text>
+  );
+};
 export const TitleText: FunctionComponent<CustomTextProps> = ({
   children,
   style,
   onPress,
 }) => {
   return (
-    <Text onPress={onPress} style={[styles.myText, style, styles.titleText]}>
+    <Text onPress={onPress} style={[styles.myText, styles.titleText, style]}>
       {children}
     </Text>
   );
@@ -35,5 +46,8 @@ const styles = StyleSheet.create({
   titleText: {
     fontWeight: 'bold',
     fontSize: 35,
+  },
+  montserrat: {
+    fontFamily: 'Montserrat',
   },
 });

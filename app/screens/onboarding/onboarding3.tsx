@@ -8,7 +8,7 @@ import {TempBox} from './onboarding1';
 
 export const Onboarding3 = ({navigation}: any) => {
   function onNextPress() {
-    //navigation.navigate('Onboarding 2');
+    navigation.navigate('Signin');
   }
   return (
     <SafeAreaView style={styles.main}>
