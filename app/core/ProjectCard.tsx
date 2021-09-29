@@ -1,5 +1,10 @@
 import React from 'react';
-import {StyleSheet, View, ImageBackground} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  ImageBackground,
+  TouchableOpacity,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Slider from '@react-native-community/slider';
 import {MyText, TextMontserrat} from '../core/MyText';
@@ -12,11 +17,12 @@ interface PC {
   days_remaining?: string;
   goal?: string;
   separator?: boolean;
+  onPress?(): void;
 }
 
 export const ProjectCard = (props: PC) => {
   return (
-    <View style={styles.main}>
+    <TouchableOpacity onPress={props.onPress} style={styles.main}>
       <ImageBackground
         borderRadius={10}
         source={require('../assets/projectThumb.jpeg')}
@@ -50,7 +56,7 @@ export const ProjectCard = (props: PC) => {
       <View style={{width: '100%'}}>
         <Slider
           disabled
-          style={{width: '100%', height: 18}}
+          style={{width: '100%'}}
           minimumValue={0}
           maximumValue={1}
           thumbTintColor={COLORS.primary_green}
@@ -74,7 +80,7 @@ export const ProjectCard = (props: PC) => {
         </MyText>
       </View>
       {props.separator && <View style={styles.divider}></View>}
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -83,6 +89,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: '100%',
     marginVertical: 10,
+    //borderWidth: 1,
+    borderRadius: 10,
   },
   title: {
     fontFamily: 'Poppins-Medium',

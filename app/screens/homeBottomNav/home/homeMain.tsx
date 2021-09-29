@@ -50,9 +50,6 @@ export const HomeMain = ({navigation}: any) => {
             marginTop: -100,
             width: '99%',
             alignSelf: 'center',
-            // paddingHorizontal: '5%',
-            // paddingEnd: '10%',
-            // borderWidth: 1,
             minHeight: 160,
             maxHeight: 200,
           }}

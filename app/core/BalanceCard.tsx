@@ -78,11 +78,11 @@ const styles = StyleSheet.create({
     width: 305,
     borderRadius: 10,
     padding: 20,
-    elevation: 2,
+    elevation: 0.4,
     shadowColor: 'rgba(0,0,0, .4)', // IOS
     shadowOffset: {height: 1, width: 1}, // IOS
-    shadowOpacity: 1, // IOS
-    shadowRadius: 1, //IOS
+    shadowOpacity: 0.4, // IOS
+    shadowRadius: 0.4, //IOS
     backgroundColor: '#fff',
     marginVertical: 10,
     marginHorizontal: 10,
