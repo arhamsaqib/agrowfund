@@ -16,19 +16,26 @@ interface BProps extends TouchableOpacityProps {
   textStyle?: StyleProp<TextStyle>;
   title?: string;
   loading?: boolean;
+  grey?: boolean;
 }
 
 export const ButtonStandard = (props: BProps) => {
-  const {inverse, style, textStyle, title, loading, ...rest} = props;
+  const {inverse, style, textStyle, title, loading, grey, ...rest} = props;
   return (
     <TouchableOpacity
       {...rest}
-      style={[styles.main, inverse && styles.inverse, style]}>
+      style={[
+        styles.main,
+        inverse && styles.inverse,
+        grey && styles.greyCont,
+        style,
+      ]}>
       <Text
         style={[
           textStyle,
           styles.txt,
           inverse && {color: COLORS.primary_green},
+          grey && styles.greyTxt,
         ]}>
         {title ?? 'Button'}
       </Text>
@@ -70,5 +77,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: 5,
+  },
+  greyCont: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: '#B0B0B0',
+  },
+  greyTxt: {
+    color: '#666666',
   },
 });

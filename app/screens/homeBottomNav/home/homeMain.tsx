@@ -77,9 +77,66 @@ export const HomeMain = ({navigation}: any) => {
             alignItems: 'center',
           }}>
           <View style={{width: '90%', marginVertical: 20}}>
-            <MyText style={{fontFamily: 'Poppins-SemiBold', fontSize: 25}}>
-              Projects
-            </MyText>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}>
+              <MyText style={{fontFamily: 'Poppins-SemiBold', fontSize: 25}}>
+                Projects
+              </MyText>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}>
+                <View
+                  style={{
+                    padding: 5,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: '#F2F2F2',
+                    borderRadius: 5,
+                    marginRight: 10,
+                  }}>
+                  <Icon name="grid" color={COLORS.grey} size={28} />
+                </View>
+                <View
+                  style={{
+                    padding: 5,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backgroundColor: '#e5fbf6',
+                    borderRadius: 5,
+                  }}>
+                  <Icon
+                    name="reorder-three-sharp"
+                    color={COLORS.primary_green}
+                    size={25}
+                  />
+                </View>
+              </View>
+            </View>
+            <View
+              style={{
+                width: '90%',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+                marginVertical: 10,
+              }}>
+              <View style={{width: '30%', marginRight: 5}}>
+                <ButtonStandard title="Ongoing" style={{height: 32}} />
+              </View>
+              <View style={{width: '40%', marginRight: 5}}>
+                <ButtonStandard title="Coming soon" grey style={{height: 32}} />
+              </View>
+              <View style={{width: '30%', marginRight: 5}}>
+                <ButtonStandard title="Soon" grey style={{height: 32}} />
+              </View>
+            </View>
             <ProjectCard separator />
             <ProjectCard separator />
             <ProjectCard />
