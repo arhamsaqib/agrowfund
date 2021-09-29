@@ -6,12 +6,25 @@ import {AuthCard} from './components/card';
 import CheckBox from '@react-native-community/checkbox';
 import {COLORS} from '../../colors';
 import {ButtonStandard} from '../../core/Button';
+import {HeadCard} from '../../core/HeadCard';
+import {Image} from 'react-native';
+import {HeadBranding} from '../../core/HeadBranding';
 
 export const Signin = () => {
   function onForgetPress() {}
   return (
-    <SafeAreaView style={styles.main}>
-      <View style={{width: '90%'}}>
+    <View style={styles.main}>
+      <HeadCard>
+        <SafeAreaView
+          style={{
+            width: '90%',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <HeadBranding />
+        </SafeAreaView>
+      </HeadCard>
+      <View style={{width: '90%', marginTop: -30}}>
         <AuthCard>
           <View style={{width: '90%', marginBottom: 20}}>
             <TitleText style={{fontSize: 30}}>Sign In</TitleText>
@@ -55,7 +68,7 @@ export const Signin = () => {
           </View>
         </AuthCard>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
