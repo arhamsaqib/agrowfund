@@ -6,7 +6,7 @@ import LinearGradient, {
 } from 'react-native-linear-gradient';
 
 interface HeadCardProps {
-  style?: StyleProp<ViewProps>;
+  style?: any;
 }
 
 export const HeadCard: FunctionComponent<HeadCardProps> = ({

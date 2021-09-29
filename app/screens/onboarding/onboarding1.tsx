@@ -13,6 +13,9 @@ export const Onboarding1 = ({navigation}: any) => {
   function onNextPress() {
     navigation.navigate('Onboarding 2');
   }
+  function onSkipPress() {
+    navigation.navigate('Signin');
+  }
   return (
     <SafeAreaView style={styles.main}>
       <ScrollView style={{width: '90%', alignSelf: 'center'}}>
@@ -39,7 +42,7 @@ export const Onboarding1 = ({navigation}: any) => {
       </ScrollView>
       <View style={styles.bottom}>
         <View style={{width: '25%'}}>
-          <ButtonStandard title="Skip" inverse />
+          <ButtonStandard title="Skip" inverse onPress={onSkipPress} />
         </View>
         <View style={{width: '40%'}}>
           <ButtonStandard title="Next" onPress={onNextPress} />
