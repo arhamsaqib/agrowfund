@@ -1,5 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, SafeAreaView, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  SafeAreaView,
+  View,
+  TouchableOpacity,
+} from 'react-native';
 import {MyText, TextMontserrat, TitleText} from '../../core/MyText';
 import {TextInputStandard} from '../../core/Textinput';
 import {AuthCard} from './components/card';
@@ -8,6 +14,52 @@ import {COLORS} from '../../colors';
 import {ButtonStandard} from '../../core/Button';
 import {HeadCard} from '../../core/HeadCard';
 import {HeadBranding} from '../../core/HeadBranding';
+import Icon from 'react-native-vector-icons/Ionicons';
+
+export const LWG = () => {
+  return (
+    <TouchableOpacity
+      style={{
+        borderWidth: 1,
+        borderColor: COLORS.text_input_border,
+        alignItems: 'center',
+        height: 47,
+        borderRadius: 3,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginVertical: 10,
+      }}>
+      <Icon name="logo-google" size={27} color="#EA4335" />
+      <MyText style={{marginLeft: 10}}>Sign in with Google</MyText>
+    </TouchableOpacity>
+  );
+};
+export const LWFB = () => {
+  return (
+    <TouchableOpacity
+      style={{
+        //borderWidth: 1,
+        //borderColor: COLORS.text_input_border,
+        alignItems: 'center',
+        height: 47,
+        borderRadius: 3,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginVertical: 10,
+        backgroundColor: '#4267B2',
+      }}>
+      <Icon
+        name="logo-facebook"
+        size={27}
+        color="white"
+        style={{borderRadius: 10}}
+      />
+      <MyText style={{marginLeft: 10, color: 'white'}}>
+        Sign in with Facebook
+      </MyText>
+    </TouchableOpacity>
+  );
+};
 
 export const Signin = ({navigation}: any) => {
   function onForgetPress() {}
@@ -72,6 +124,10 @@ export const Signin = ({navigation}: any) => {
             <ButtonStandard title="Sign In" />
           </View>
         </AuthCard>
+      </View>
+      <View style={{width: '90%'}}>
+        <LWG />
+        <LWFB />
       </View>
       <View style={styles.bottom}>
         <TextMontserrat style={[styles.bottomText]}>
