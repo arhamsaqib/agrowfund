@@ -11,7 +11,9 @@ import {COLORS} from '../../../colors';
 import {ButtonStandard} from '../../../core/Button';
 
 export const HomeMain = ({navigation}: any) => {
-  function onNotifPress() {}
+  function onNotifPress() {
+    navigation.navigate('Notifications');
+  }
   const images = [
     'https://source.unsplash.com/1024x768/?nature',
     'https://source.unsplash.com/1024x768/?water',
