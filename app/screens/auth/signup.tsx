@@ -14,6 +14,9 @@ export const Signup = ({navigation}: any) => {
   function onSigninPress() {
     navigation.navigate('Signin');
   }
+  function onSignUp() {
+    navigation.navigate('Bottom Tabs');
+  }
   return (
     <View style={styles.main}>
       <ScrollView style={{width: '100%', alignSelf: 'center'}}>
@@ -83,7 +86,7 @@ export const Signup = ({navigation}: any) => {
               </View>
             </View>
             <View style={{width: '90%', marginTop: 20}}>
-              <ButtonStandard title="Register Now" />
+              <ButtonStandard title="Register Now" onPress={onSignUp} />
             </View>
           </AuthCard>
           <View style={{marginTop: 40}}></View>

@@ -7,6 +7,7 @@ import {Onboarding2} from './screens/onboarding/onboarding2';
 import {Onboarding3} from './screens/onboarding/onboarding3';
 import {Signin} from './screens/auth/signin';
 import {Signup} from './screens/auth/signup';
+import {BottomTabs} from './screens/homeBottomNav/BottomNav';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ export const Agrowfund = () => {
         <Stack.Screen name="Onboarding 3" component={Onboarding3} />
         <Stack.Screen name="Signin" component={Signin} />
         <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Bottom Tabs" component={BottomTabs} />
       </Stack.Navigator>
     </NavigationContainer>
   );

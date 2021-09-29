@@ -66,6 +66,9 @@ export const Signin = ({navigation}: any) => {
   function onSignUpPress() {
     navigation.navigate('Signup');
   }
+  function onSignin() {
+    navigation.navigate('Bottom Tabs');
+  }
   return (
     <View style={styles.main}>
       <HeadCard>
@@ -121,7 +124,7 @@ export const Signin = ({navigation}: any) => {
             </MyText>
           </View>
           <View style={{width: '90%', marginTop: 20}}>
-            <ButtonStandard title="Sign In" />
+            <ButtonStandard title="Sign In" onPress={onSignin} />
           </View>
         </AuthCard>
       </View>
