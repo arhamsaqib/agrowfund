@@ -7,11 +7,13 @@ import CheckBox from '@react-native-community/checkbox';
 import {COLORS} from '../../colors';
 import {ButtonStandard} from '../../core/Button';
 import {HeadCard} from '../../core/HeadCard';
-import {Image} from 'react-native';
 import {HeadBranding} from '../../core/HeadBranding';
 
-export const Signin = () => {
+export const Signin = ({navigation}: any) => {
   function onForgetPress() {}
+  function onSignUpPress() {
+    navigation.navigate('Signup');
+  }
   return (
     <View style={styles.main}>
       <HeadCard>
@@ -24,7 +26,7 @@ export const Signin = () => {
           <HeadBranding />
         </SafeAreaView>
       </HeadCard>
-      <View style={{width: '90%', marginTop: -30}}>
+      <View style={{width: '90%', marginTop: -40}}>
         <AuthCard>
           <View style={{width: '90%', marginBottom: 20}}>
             <TitleText style={{fontSize: 30}}>Sign In</TitleText>
@@ -32,7 +34,10 @@ export const Signin = () => {
 
           <View style={{width: '90%', marginTop: 5}}>
             <TextMontserrat style={styles.fieldHead}>Email</TextMontserrat>
-            <TextInputStandard placeholder="Enter your email" />
+            <TextInputStandard
+              autoCapitalize="none"
+              placeholder="Enter your email"
+            />
           </View>
 
           <View style={{width: '90%', marginTop: 5}}>
@@ -68,6 +73,16 @@ export const Signin = () => {
           </View>
         </AuthCard>
       </View>
+      <View style={styles.bottom}>
+        <TextMontserrat style={[styles.bottomText]}>
+          Don't have any account?{' '}
+        </TextMontserrat>
+        <TextMontserrat
+          onPress={onSignUpPress}
+          style={[styles.bottomText, {fontWeight: 'bold'}]}>
+          Sign Up
+        </TextMontserrat>
+      </View>
     </View>
   );
 };
@@ -91,5 +106,15 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     //width: '90%',
     marginVertical: 5,
+  },
+  bottom: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    bottom: 20,
+  },
+  bottomText: {
+    fontSize: 15,
   },
 });
