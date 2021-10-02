@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, StyleSheet, View, ScrollView} from 'react-native';
 import {MyText} from '../../../core/MyText';
 import {ProjectCard} from '../../../core/ProjectCard';
@@ -8,6 +8,7 @@ import {COLORS} from '../../../colors';
 import {ButtonStandard} from '../../../core/Button';
 
 export const ProjectsMain = ({navigation}: any) => {
+  const [expanded, setExpanded] = useState(true);
   return (
     <SafeAreaView style={styles.main}>
       <ScrollView showsVerticalScrollIndicator={false} style={{width: '100%'}}>
@@ -17,15 +18,30 @@ export const ProjectsMain = ({navigation}: any) => {
               <MyText style={styles.headingTxt}>Projects</MyText>
               <View style={styles.headerInnerCont}>
                 <View
-                  style={[styles.headIconCont, {backgroundColor: '#F2F2F2'}]}>
-                  <Icon name="grid" color={COLORS.grey} size={28} />
+                  style={[
+                    styles.headIconCont,
+                    expanded && {backgroundColor: '#e5fbf6'},
+                  ]}>
+                  <Icon
+                    name="grid"
+                    color={(expanded && COLORS.gradient_primary) || COLORS.grey}
+                    size={28}
+                    onPress={() => setExpanded(true)}
+                  />
                 </View>
                 <View
-                  style={[styles.headIconCont, {backgroundColor: '#e5fbf6'}]}>
+                  // style={[styles.headIconCont, {backgroundColor: '#e5fbf6'}]}
+                  style={[
+                    styles.headIconCont,
+                    !expanded && {backgroundColor: '#e5fbf6'},
+                  ]}>
                   <Icon
                     name="reorder-three-sharp"
-                    color={COLORS.primary_green}
+                    color={
+                      (!expanded && COLORS.gradient_primary) || COLORS.grey
+                    }
                     size={25}
+                    onPress={() => setExpanded(false)}
                   />
                 </View>
               </View>
@@ -41,10 +57,12 @@ export const ProjectsMain = ({navigation}: any) => {
                 <ButtonStandard title="Closed" grey style={{height: 32}} />
               </View>
             </View>
-            <ProjectCard separator />
-            <ProjectCard separator expanded />
-            <ProjectCard separator expanded />
-            <ProjectCard separator expanded />
+            <ProjectCard separator expanded={expanded} />
+            <ProjectCard separator expanded={expanded} />
+            <ProjectCard separator expanded={expanded} />
+            <ProjectCard separator expanded={expanded} />
+            <ProjectCard separator expanded={expanded} />
+
             <ProjectCard />
           </View>
         </View>
@@ -75,6 +93,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 5,
     marginRight: 10,
+    backgroundColor: '#F2F2F2',
   },
   filtersCont: {
     width: '90%',
