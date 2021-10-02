@@ -42,9 +42,9 @@ export const ProjectsMain = ({navigation}: any) => {
               </View>
             </View>
             <ProjectCard separator />
-            <ProjectCard separator />
-            <ProjectCard separator />
-            <ProjectCard separator />
+            <ProjectCard separator expanded />
+            <ProjectCard separator expanded />
+            <ProjectCard separator expanded />
             <ProjectCard />
           </View>
         </View>
