@@ -1,10 +1,13 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {COLORS} from '../../../../colors';
 import {MyText} from '../../../../core/MyText';
 import {GlobalStyles} from '../../../../styles/GlobalStyles';
 import Slider from '@react-native-community/slider';
 import {Separator} from './Separator';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {ButtonStandard} from '../../../../core/Button';
+import {Story} from './Story';
 
 interface DonationCardProps {
   recent?: boolean;
@@ -68,6 +71,7 @@ const Donator = (props: DonationCardProps) => {
 };
 
 export const DonationsCard = () => {
+  const shareIcon = require('../../../../assets/icons/share.png');
   return (
     <View style={[GlobalStyles.elevated_card]}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -108,10 +112,93 @@ export const DonationsCard = () => {
         </View>
       </View>
       <Separator />
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: '100%',
+          alignSelf: 'center',
+        }}>
+        <View style={styles.det}>
+          <MyText style={styles.fontMed}>465</MyText>
+          <MyText style={styles.monReg}>Min. Invest</MyText>
+        </View>
+        <View style={styles.det}>
+          <MyText style={styles.fontMed}>10-30%</MyText>
+          <MyText style={styles.monReg}>Expected Return</MyText>
+        </View>
+        <View style={styles.det}>
+          <MyText style={styles.fontMed}>$300k</MyText>
+          <MyText style={styles.monReg}>Offering max</MyText>
+        </View>
+      </View>
+      <Separator />
       <MyText style={styles.fontMed}>762 People just donated</MyText>
       <Separator />
       <Donator />
       <Donator recent />
+      <Separator />
+      <View
+        style={{
+          flexDirection: 'row',
+          width: '90%',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}>
+        <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View
+            style={{
+              height: 25,
+              width: 25,
+              borderRadius: 25,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: '#e5faf6',
+            }}>
+            <Image source={shareIcon} style={{height: 12.5, width: 12.5}} />
+          </View>
+          <MyText style={styles.fontReg}> Share Now</MyText>
+        </TouchableOpacity>
+        <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View
+            style={{
+              height: 25,
+              width: 25,
+              borderRadius: 25,
+              alignItems: 'center',
+              justifyContent: 'center',
+              //backgroundColor: '#efefef',
+              borderWidth: 1,
+            }}>
+            <Icon name="heart-outline" size={12} />
+          </View>
+          <MyText style={styles.fontReg}> Follow</MyText>
+        </TouchableOpacity>
+      </View>
+      <View
+        style={{
+          alignItems: 'center',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginVertical: 20,
+        }}>
+        <View style={{width: '48%'}}>
+          <ButtonStandard
+            title="Donate Now"
+            grey
+            textStyle={{fontFamily: 'Poppins-Regular'}}
+            style={{height: 36}}
+          />
+        </View>
+        <View style={{width: '48%'}}>
+          <ButtonStandard
+            title="Invest Now"
+            textStyle={{fontFamily: 'Poppins-Regular'}}
+            style={{height: 36}}
+          />
+        </View>
+      </View>
     </View>
   );
 };
@@ -141,5 +228,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginVertical: 5,
+  },
+  fontReg: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 15,
   },
 });
