@@ -12,6 +12,7 @@ import {HeadCard} from '../../../core/HeadCard';
 import {ImageScroller} from '../../../core/ImageScroller';
 import {MyText} from '../../../core/MyText';
 import {SectionLine} from '../../../core/sectionLine';
+import {Comments} from './components/comments';
 import {DonationsCard} from './components/DonationsCard';
 import {FAQ} from './components/faq';
 import {Story} from './components/Story';
@@ -92,8 +93,11 @@ export const ProjectDetails = ({navigation}: any) => {
             <DonationsCard />
           </View>
           <View style={{width: '90%'}}>
-            <FAQ />
+            <Comments />
           </View>
+          {/* <View style={{width: '90%'}}>
+            <FAQ />
+          </View> */}
           {/* <View style={{width: '90%'}}>
             <Story />
           </View> */}
