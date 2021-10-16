@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   ImageBackground,
   SafeAreaView,
@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {COLORS} from '../../../colors';
 import {HeadCard} from '../../../core/HeadCard';
 import {ImageScroller} from '../../../core/ImageScroller';
 import {MyText} from '../../../core/MyText';
@@ -51,6 +52,7 @@ const ImageCard = (props: ImageCard) => {
 };
 
 export const ProjectDetails = ({navigation}: any) => {
+  const [activeSection, setActiveSection] = useState('story');
   return (
     <View style={styles.main}>
       <ScrollView showsVerticalScrollIndicator={false} style={{width: '100%'}}>
@@ -92,15 +94,63 @@ export const ProjectDetails = ({navigation}: any) => {
           <View style={{width: '90%', marginTop: 20}}>
             <DonationsCard />
           </View>
-          <View style={{width: '90%'}}>
-            <Comments />
+          <View
+            style={{
+              width: '90%',
+              marginVertical: 10,
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}>
+            <View
+              style={[
+                styles.sectionView,
+                activeSection === 'story' && styles.sectionActiveView,
+              ]}>
+              <MyText
+                onPress={() => setActiveSection('story')}
+                style={styles.sectionText}>
+                STORY
+              </MyText>
+            </View>
+            <View
+              style={[
+                styles.sectionView,
+                activeSection === 'faqs' && styles.sectionActiveView,
+              ]}>
+              <MyText
+                onPress={() => setActiveSection('faqs')}
+                style={styles.sectionText}>
+                FAQs
+              </MyText>
+            </View>
+            <View
+              style={[
+                styles.sectionView,
+                activeSection === 'comments' && styles.sectionActiveView,
+              ]}>
+              <MyText
+                onPress={() => setActiveSection('comments')}
+                style={styles.sectionText}>
+                Comments
+              </MyText>
+            </View>
           </View>
-          {/* <View style={{width: '90%'}}>
-            <FAQ />
-          </View> */}
-          {/* <View style={{width: '90%'}}>
-            <Story />
-          </View> */}
+
+          {activeSection === 'story' && (
+            <View style={{width: '90%'}}>
+              <Story />
+            </View>
+          )}
+          {activeSection === 'faqs' && (
+            <View style={{width: '90%'}}>
+              <FAQ />
+            </View>
+          )}
+          {activeSection === 'comments' && (
+            <View style={{width: '90%'}}>
+              <Comments />
+            </View>
+          )}
         </View>
       </ScrollView>
     </View>
@@ -123,5 +173,18 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: 'white',
     textAlign: 'center',
+  },
+  sectionText: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 15,
+  },
+  sectionView: {
+    height: 30,
+    padding: 4,
+    marginRight: 10,
+  },
+  sectionActiveView: {
+    borderBottomWidth: 1,
+    borderColor: COLORS.gradient_primary,
   },
 });
