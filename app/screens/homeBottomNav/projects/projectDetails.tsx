@@ -13,6 +13,7 @@ import {ImageScroller} from '../../../core/ImageScroller';
 import {MyText} from '../../../core/MyText';
 import {SectionLine} from '../../../core/sectionLine';
 import {DonationsCard} from './components/DonationsCard';
+import {FAQ} from './components/faq';
 import {Story} from './components/Story';
 
 interface ImageCard {
@@ -91,8 +92,11 @@ export const ProjectDetails = ({navigation}: any) => {
             <DonationsCard />
           </View>
           <View style={{width: '90%'}}>
-            <Story />
+            <FAQ />
           </View>
+          {/* <View style={{width: '90%'}}>
+            <Story />
+          </View> */}
         </View>
       </ScrollView>
     </View>
