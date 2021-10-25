@@ -92,7 +92,7 @@ export const ProjectDetails = ({navigation}: any) => {
             <ImageScroller />
           </View>
           <View style={{width: '90%', marginTop: 20}}>
-            <DonationsCard />
+            <DonationsCard navigation={navigation} />
           </View>
           <View
             style={{

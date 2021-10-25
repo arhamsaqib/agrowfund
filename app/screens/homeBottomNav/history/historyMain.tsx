@@ -55,7 +55,11 @@ export const HistoryMain = ({navigation}: any) => {
                 <ButtonStandard title="Invested" grey style={{height: 32}} />
               </View>
             </View>
-            <HistoryProjectCard separator expanded={expanded} />
+            <HistoryProjectCard
+              separator
+              expanded={expanded}
+              onTrackProjectPress={() => navigation.navigate('Track Project')}
+            />
             <HistoryProjectCard separator expanded={expanded} />
             <HistoryProjectCard separator expanded={expanded} />
             <HistoryProjectCard separator expanded={expanded} />

@@ -17,6 +17,7 @@ interface PC {
   separator?: boolean;
   onPress?(): void;
   expanded?: boolean;
+  onTrackProjectPress?(): void;
 }
 
 export const HistoryProjectCard = (props: PC) => {
@@ -72,12 +73,14 @@ export const HistoryProjectCard = (props: PC) => {
               //maximumTrackTintColor="#000000"
             />
           </View>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <TouchableOpacity
+            onPress={props.onTrackProjectPress}
+            style={{flexDirection: 'row', alignItems: 'center'}}>
             <MyText style={[styles.title, {fontSize: 13}]}>
               Track Project
             </MyText>
             <Icon name="arrow-forward-outline" size={17} />
-          </View>
+          </TouchableOpacity>
         </View>
       </TouchableOpacity>
     );
@@ -136,12 +139,14 @@ export const HistoryProjectCard = (props: PC) => {
           <MyText style={[styles.title, {fontSize: 14}]}>
             Donated {props.donated ?? '$350'}
           </MyText>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <TouchableOpacity
+            onPress={props.onTrackProjectPress}
+            style={{flexDirection: 'row', alignItems: 'center'}}>
             <MyText style={[styles.title, {fontSize: 14}]}>
               Track Project
             </MyText>
             <Icon name="arrow-forward-outline" size={17} />
-          </View>
+          </TouchableOpacity>
         </View>
         {props.separator && <View style={styles.divider}></View>}
       </TouchableOpacity>

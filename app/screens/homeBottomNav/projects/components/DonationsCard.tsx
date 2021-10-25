@@ -7,7 +7,6 @@ import Slider from '@react-native-community/slider';
 import {Separator} from './Separator';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {ButtonStandard} from '../../../../core/Button';
-import {Story} from './Story';
 
 interface DonationCardProps {
   recent?: boolean;
@@ -70,7 +69,11 @@ const Donator = (props: DonationCardProps) => {
   );
 };
 
-export const DonationsCard = () => {
+interface DonationsCard {
+  navigation?: any;
+}
+
+export const DonationsCard = (props: DonationsCard) => {
   const shareIcon = require('../../../../assets/icons/share.png');
   return (
     <View style={[GlobalStyles.elevated_card]}>
@@ -189,6 +192,7 @@ export const DonationsCard = () => {
             grey
             textStyle={{fontFamily: 'Poppins-Regular'}}
             style={{height: 36}}
+            onPress={() => props.navigation.navigate('Donate Now')}
           />
         </View>
         <View style={{width: '48%'}}>
