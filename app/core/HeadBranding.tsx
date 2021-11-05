@@ -10,7 +10,12 @@ export const HeadBranding = () => {
         //source={require('../../assets/logo/logoWhite.png')}
         source={require('../assets/logo/logoWhite.png')}
       />
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
         <MyText style={styles.headText}>AGROW</MyText>
         <MyText style={[styles.headText, {fontWeight: 'bold'}]}>FUND</MyText>
       </View>

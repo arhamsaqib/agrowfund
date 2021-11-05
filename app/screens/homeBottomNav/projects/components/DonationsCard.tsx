@@ -1,12 +1,12 @@
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {COLORS} from '../../../../colors';
 import {MyText} from '../../../../core/MyText';
 import {GlobalStyles} from '../../../../styles/GlobalStyles';
-import Slider from '@react-native-community/slider';
 import {Separator} from './Separator';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {ButtonStandard} from '../../../../core/Button';
+import {CustomSlider} from '../../../../core/Slider';
 
 interface DonationCardProps {
   recent?: boolean;
@@ -82,7 +82,7 @@ export const DonationsCard = (props: DonationsCard) => {
         <MyText style={styles.monReg}>Funded of $70000</MyText>
       </View>
       <View style={{width: '100%'}}>
-        <Slider
+        {/* <Slider
           disabled
           style={{width: '100%'}}
           minimumValue={0}
@@ -91,7 +91,8 @@ export const DonationsCard = (props: DonationsCard) => {
           value={0.6}
           minimumTrackTintColor={COLORS.primary_green}
           //maximumTrackTintColor="#000000"
-        />
+        /> */}
+        <CustomSlider />
       </View>
       <View
         style={{

@@ -12,10 +12,10 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {GlobalStyles} from '../../../styles/GlobalStyles';
 import {Separator} from './components/Separator';
 import {TextInputStandard} from '../../../core/Textinput';
-import CheckBox from '@react-native-community/checkbox';
 import {COLORS} from '../../../colors';
 import {ButtonStandard} from '../../../core/Button';
 import RBSheet from 'react-native-raw-bottom-sheet';
+import {CheckBox} from '../../auth/components/checkbox';
 
 const EnterAmount = () => {
   return (
@@ -126,12 +126,7 @@ export const DonateNow = ({navigation}: any) => {
           <View style={[{width: '90%'}, GlobalStyles.elevated_card]}>
             <MyText style={styles.titleTxt}>Other Information</MyText>
             <View style={styles.otherCont}>
-              <CheckBox
-                boxType="square"
-                onFillColor={COLORS.grey}
-                onCheckColor="white"
-                onTintColor={COLORS.grey}
-              />
+              <CheckBox />
               <TextMontserrat> Don't display </TextMontserrat>
               <TextMontserrat style={{fontFamily: 'Montserrat-SemiBold'}}>
                 my name{' '}
@@ -145,12 +140,7 @@ export const DonateNow = ({navigation}: any) => {
                   width: '90%',
                 },
               ]}>
-              <CheckBox
-                boxType="square"
-                onFillColor={COLORS.grey}
-                onCheckColor="white"
-                onTintColor={COLORS.grey}
-              />
+              <CheckBox />
               <View style={{alignItems: 'center'}}>
                 <TextMontserrat>
                   {' '}
