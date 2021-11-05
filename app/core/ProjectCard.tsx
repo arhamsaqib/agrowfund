@@ -6,9 +6,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Slider from '@react-native-community/slider';
+// import Slider from '@react-native-community/slider';
 import {MyText, TextMontserrat} from '../core/MyText';
 import {COLORS} from '../colors';
+import {CustomSlider} from './Slider';
 
 interface PC {
   title?: string;
@@ -65,16 +66,7 @@ export const ProjectCard = (props: PC) => {
             </MyText>
           </View>
           <View style={{width: '100%'}}>
-            <Slider
-              disabled
-              style={{width: '100%'}}
-              minimumValue={0}
-              maximumValue={1}
-              thumbTintColor={COLORS.primary_green}
-              value={0.6}
-              minimumTrackTintColor={COLORS.primary_green}
-              //maximumTrackTintColor="#000000"
-            />
+            <CustomSlider />
           </View>
           <MyText style={[styles.titleSmall]}>
             {props.days_remaining ?? '45'} Days Remaining
@@ -116,16 +108,7 @@ export const ProjectCard = (props: PC) => {
           ${props.funded ?? '12,000'} Funded
         </MyText>
         <View style={{width: '100%'}}>
-          <Slider
-            disabled
-            style={{width: '100%'}}
-            minimumValue={0}
-            maximumValue={1}
-            thumbTintColor={COLORS.primary_green}
-            value={0.6}
-            minimumTrackTintColor={COLORS.primary_green}
-            //maximumTrackTintColor="#000000"
-          />
+          <CustomSlider />
         </View>
         <View
           style={{

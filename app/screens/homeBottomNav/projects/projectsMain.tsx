@@ -13,7 +13,7 @@ export const ProjectsMain = ({navigation}: any) => {
     <SafeAreaView style={styles.main}>
       <ScrollView showsVerticalScrollIndicator={false} style={{width: '100%'}}>
         <View style={styles.scrollViewInnerMainCont}>
-          <View style={{width: '90%', marginBottom: 20}}>
+          <View style={{width: '90%', marginVertical: 20}}>
             <View style={styles.headerCont}>
               <MyText style={styles.headingTxt}>Projects</MyText>
               <View style={styles.headerInnerCont}>
@@ -92,13 +92,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    // borderWidth: 1,
+    width: 80,
   },
   headIconCont: {
     padding: 5,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,
-    marginRight: 10,
+    //marginRight: 10,
     backgroundColor: '#F2F2F2',
   },
   filtersCont: {
