@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Image, StyleSheet, View, Switch, TouchableOpacity} from 'react-native';
+import {Image, StyleSheet, View, TouchableOpacity} from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import {COLORS} from '../colors';
+import {CustomSwitch} from './CustomSwitch';
 import {MyText, TextMontserrat} from './MyText';
-
 interface BalanceCard {
   cardName?: string;
   balance?: string;
@@ -48,13 +48,7 @@ export const BalanceCard = (props: BalanceCard) => {
       <View style={styles.divider}></View>
       <View style={styles.bottomCont}>
         <View style={styles.switchCont}>
-          <Switch
-            value={hide}
-            onValueChange={setHide}
-            thumbColor={COLORS.primary_green}
-            trackColor={{false: '#F2F2F2', true: '#F2F2F2'}}
-            ios_backgroundColor={'#F2F2F2'}
-          />
+          <CustomSwitch isOn={hide} onToggle={setHide} />
           <TextMontserrat style={{marginLeft: 4}}>Hide Balance</TextMontserrat>
         </View>
         <TouchableOpacity
@@ -121,5 +115,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  switchTrack: {
+    backgroundColor: '#F2F2F2',
   },
 });

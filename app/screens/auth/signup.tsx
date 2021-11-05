@@ -3,12 +3,13 @@ import {StyleSheet, Text, SafeAreaView, View, ScrollView} from 'react-native';
 import {TextMontserrat, TitleText} from '../../core/MyText';
 import {TextInputStandard} from '../../core/Textinput';
 import {AuthCard} from './components/card';
-import CheckBox from '@react-native-community/checkbox';
+// import CheckBox from '@react-native-community/checkbox';
 import {COLORS} from '../../colors';
 import {ButtonStandard} from '../../core/Button';
 import {HeadCard} from '../../core/HeadCard';
 import {HeadBranding} from '../../core/HeadBranding';
 import {LWFB, LWG} from './signin';
+import {CheckBox} from './components/checkbox';
 
 export const Signup = ({navigation}: any) => {
   function onSigninPress() {
@@ -60,24 +61,26 @@ export const Signup = ({navigation}: any) => {
               <TextInputStandard secureTextEntry />
             </View>
             <View style={styles.checkbox}>
-              <CheckBox
+              {/* <CheckBox
                 boxType="square"
                 onFillColor={COLORS.grey}
                 onCheckColor="white"
                 onTintColor={COLORS.grey}
-              />
+              /> */}
+              <CheckBox />
               <TextMontserrat style={[styles.fieldHead, styles.sec]}>
                 Register as investor.
               </TextMontserrat>
             </View>
             <View style={styles.checkbox}>
               <View style={{}}>
-                <CheckBox
+                <CheckBox />
+                {/* <CheckBox
                   boxType="square"
                   onFillColor={COLORS.grey}
                   onCheckColor="white"
                   onTintColor={COLORS.grey}
-                />
+                /> */}
               </View>
               <View style={{width: '80%'}}>
                 <TextMontserrat style={[styles.fieldHead, styles.sec]}>

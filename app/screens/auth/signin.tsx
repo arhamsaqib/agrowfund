@@ -1,20 +1,16 @@
-import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  SafeAreaView,
-  View,
-  TouchableOpacity,
-} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, SafeAreaView, View, TouchableOpacity} from 'react-native';
 import {MyText, TextMontserrat, TitleText} from '../../core/MyText';
 import {TextInputStandard} from '../../core/Textinput';
 import {AuthCard} from './components/card';
-import CheckBox from '@react-native-community/checkbox';
+// import CheckBox from '@react-native-community/checkbox';
 import {COLORS} from '../../colors';
 import {ButtonStandard} from '../../core/Button';
 import {HeadCard} from '../../core/HeadCard';
 import {HeadBranding} from '../../core/HeadBranding';
 import Icon from 'react-native-vector-icons/Ionicons';
+// import {Checkbox} from 'react-native-paper';
+import {CheckBox} from './components/checkbox';
 
 export const LWG = () => {
   return (
@@ -62,6 +58,7 @@ export const LWFB = () => {
 };
 
 export const Signin = ({navigation}: any) => {
+  const [checked, setChecked] = useState(false);
   function onForgetPress() {}
   function onSignUpPress() {
     navigation.navigate('Signup');
@@ -107,12 +104,20 @@ export const Signin = ({navigation}: any) => {
               width: '90%',
             }}>
             <View style={styles.checkbox}>
-              <CheckBox
+              {/* <CheckBox
                 boxType="square"
                 onFillColor={COLORS.grey}
                 onCheckColor="white"
                 onTintColor={COLORS.grey}
-              />
+              /> */}
+              {/* <Checkbox
+                uncheckedColor={COLORS.grey}
+                status={checked ? 'checked' : 'unchecked'}
+                onPress={() => {
+                  setChecked(!checked);
+                }}
+              /> */}
+              <CheckBox />
               <TextMontserrat style={[styles.fieldHead, styles.sec]}>
                 Remember me
               </TextMontserrat>
@@ -165,6 +170,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     //width: '90%',
     marginVertical: 5,
+    //borderWidth: 1,
   },
   bottom: {
     flexDirection: 'row',
