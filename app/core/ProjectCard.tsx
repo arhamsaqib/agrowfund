@@ -24,7 +24,7 @@ interface PC {
 export const ProjectCard = (props: PC) => {
   if (!props.expanded) {
     return (
-      <TouchableOpacity style={styles.smallCardMain}>
+      <TouchableOpacity onPress={props.onPress} style={styles.smallCardMain}>
         <View style={{width: '35%'}}>
           <ImageBackground
             borderRadius={10}
@@ -88,7 +88,7 @@ export const ProjectCard = (props: PC) => {
         <ImageBackground
           borderRadius={10}
           source={require('../assets/projectThumb.jpeg')}
-          style={{height: 210, width: 350, borderRadius: 10}}>
+          style={{height: 210, width: '100%', borderRadius: 10}}>
           <View
             style={{
               //borderWidth: 1,

@@ -57,17 +57,19 @@ export const ProjectsMain = ({navigation}: any) => {
                 <ButtonStandard title="Closed" grey style={{height: 32}} />
               </View>
             </View>
-            <ProjectCard
-              separator
-              expanded={expanded}
-              onPress={() => navigation.navigate('Project Details')}
-            />
-            <ProjectCard separator expanded={expanded} />
-            <ProjectCard separator expanded={expanded} />
-            <ProjectCard separator expanded={expanded} />
-            <ProjectCard separator expanded={expanded} />
+            <View>
+              <ProjectCard
+                separator
+                expanded={expanded}
+                onPress={() => navigation.navigate('Project Details')}
+              />
+              <ProjectCard separator expanded={expanded} />
+              <ProjectCard separator expanded={expanded} />
+              <ProjectCard separator expanded={expanded} />
+              <ProjectCard separator expanded={expanded} />
 
-            <ProjectCard />
+              <ProjectCard />
+            </View>
           </View>
         </View>
       </ScrollView>
