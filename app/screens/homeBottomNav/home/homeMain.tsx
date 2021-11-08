@@ -9,10 +9,16 @@ import {BalanceCard} from '../../../core/BalanceCard';
 import {SliderBox} from 'react-native-image-slider-box';
 import {COLORS} from '../../../colors';
 import {ButtonStandard} from '../../../core/Button';
+import {useState} from 'react';
+import {SideModal} from '../../../core/SideModal';
+import {Notifications} from './notifications';
 
 export const HomeMain = ({navigation}: any) => {
+  const [notificationModal, setNotificationModal] = useState(false);
+
   function onNotifPress() {
-    navigation.navigate('Notifications');
+    //navigation.navigate('Notifications');
+    setNotificationModal(true);
   }
   const images = [
     'https://source.unsplash.com/1024x768/?nature',
@@ -47,6 +53,11 @@ export const HomeMain = ({navigation}: any) => {
             </View>
           </SafeAreaView>
         </HeadCard>
+        <SideModal
+          onCancelPress={() => setNotificationModal(false)}
+          modalVisibility={notificationModal}>
+          <Notifications />
+        </SideModal>
         <ScrollView
           style={{
             marginTop: -100,

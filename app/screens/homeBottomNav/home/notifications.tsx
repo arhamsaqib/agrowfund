@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Image,
+  FlatList,
 } from 'react-native';
 import {COLORS} from '../../../colors';
 import {MyText, TextMontserrat} from '../../../core/MyText';
@@ -30,8 +31,8 @@ const Card = (props: CardProps) => {
               style={{
                 //backgroundColor: '#00CBA2',
                 //opacity: 0.1,
-                width: 40,
-                height: 40,
+                width: 30,
+                height: 30,
                 tintColor: '#00CBA2',
               }}
             />
@@ -42,8 +43,8 @@ const Card = (props: CardProps) => {
               style={{
                 //backgroundColor: '#00CBA2',
                 //opacity: 0.1,
-                width: 40,
-                height: 40,
+                width: 30,
+                height: 30,
                 tintColor: 'white',
               }}
             />
@@ -73,17 +74,41 @@ const Card = (props: CardProps) => {
 };
 
 export const Notifications = () => {
+  const notifs = [
+    {
+      active: true,
+    },
+    {
+      active: true,
+    },
+    {
+      active: true,
+    },
+    {
+      active: true,
+    },
+    {
+      active: false,
+    },
+    {
+      active: false,
+    },
+  ];
   return (
     <SafeAreaView style={styles.main}>
       <View style={{width: '90%', marginVertical: 10}}>
         <MyText style={styles.heading}>Notifications</MyText>
-        <Card active />
+        <FlatList
+          data={notifs}
+          renderItem={({item, index}: any) => <Card active={item.active} />}
+        />
+        {/* <Card active />
         <Card active />
         <Card active />
         <Card active />
         <Card active />
         <Card />
-        <Card />
+        <Card /> */}
       </View>
     </SafeAreaView>
   );
@@ -91,10 +116,11 @@ export const Notifications = () => {
 
 const styles = StyleSheet.create({
   main: {
-    flex: 1,
+    //flex: 1,
     backgroundColor: 'white',
     alignItems: 'center',
     width: '100%',
+    borderRadius: 10,
   },
   heading: {
     fontFamily: 'Poppins-Medium',
